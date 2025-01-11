@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Allows access to [Android/media/com.example.cursedcamera/CursedCamera] within external storage -->
+    <external-path
+        name="media_files"
+        path="Android/media/com.example.cursedcamera/CursedCamera/" />
+
+    <!-- Optionally, allow any external-files-path if you are storing in getExternalFilesDir -->
+    <external-files-path
+        name="external_files"
+        path="." />
+</paths>

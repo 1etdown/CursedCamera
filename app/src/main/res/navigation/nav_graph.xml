@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/cameraFragment">
+
+    <!-- Camera Fragment -->
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.cursedcamera.CameraFragment"
+        android:label="Camera">
+        <action
+            android:id="@+id/action_cameraFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+
+    <!-- Gallery Fragment -->
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.cursedcamera.GalleryFragment"
+        android:label="Gallery">
+        <action
+            android:id="@+id/action_galleryFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_galleryFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+
+    <!-- Video Fragment (Placeholder for actual video view) -->
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.cursedcamera.VideoFragment"
+        android:label="Video">
+        <action
+            android:id="@+id/action_videoFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenMediaFragment"
+        android:name="com.example.cursedcamera.FullScreenMediaFragment"
+        android:label="FullScreenMediaFragment" >
+        <action
+            android:id="@+id/action_fullScreenMediaFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+
+    <!-- Внутри galleryFragment (уже имеющегося) добавьте переход -->
+    <action
+        android:id="@+id/action_galleryFragment_to_fullScreenMediaFragment"
+        app:destination="@id/fullScreenMediaFragment" />
+</navigation>
